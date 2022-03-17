@@ -15,7 +15,7 @@ module.exports = {
    const socks = [];
    for (let i = 0; i < count; i++) {
      socks.push({
-      colorId: Math.ceil(Math.random() * 10),
+      colorId: i + 1,
       ornamentId: Math.ceil(Math.random() * 4),
       pictureId: Math.ceil(Math.random() * 5),
       createdAt: new Date(),
