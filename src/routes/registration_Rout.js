@@ -1,11 +1,12 @@
 const express = require('express');
-const registration = express.Router();
+// const bcrypt = require('bcrypt');
+const sha256 = require('sha256');
 
-const bcrypt = require('bcrypt');
+const registration = express.Router();
 
 const { User } = require('../../db/models');
 
-
+// /registration
 registration.post('/', async (req, res) => {
   const { name, email, password: pass } = req.body;
   const currUser = await User.findOne({ where: { email }, raw: true });
@@ -15,15 +16,15 @@ registration.post('/', async (req, res) => {
   } else {
     try {
       // console.log('try');
-      const saltRounds = 10;
-      const password = await bcrypt.hash(pass, saltRounds);
-      const newUser = await User.create({ name, email, password })
+      
+      const password = await sha256(pass);
+      const newUser = await User.create({ name, email, password });
       req.session.userId = await newUser.id;
       req.session.userName = await newUser.name;
       req.session.userEmale = await newUser.email;
-      res.sendStatus(200)
+      res.sendStatus(200);
     } catch (e) {
-      res.sendStatus(400)
+      res.sendStatus(400);
     }
   }
 })

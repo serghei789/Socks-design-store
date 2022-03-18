@@ -2,77 +2,92 @@
 <script defer src="/js/authorization.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
   <div class="container-fluid ">
-<a> <img src="/img/logo.jpg" alt="logo" width="60" height="54"> </a>
- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a> <img src="/img/logo.jpg" alt="logo" width="60" height="54"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-  data-bs-whatever="@mdo">registration</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">registration</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form name="formBlock">
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Name:</label>
-            <input name="name" type="text" class="form-control" id="recipient-name" required placeholder="Введите ваше имя" >
+        {{#unless userId}}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@mdo">registration</button>
+        {{/unless}}
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">registration</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form name="formBlock">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Name:</label>
+                    <input name="name" type="text" class="form-control" id="recipient-name" required
+                      placeholder="Введите ваше имя">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Mail:</label>
+                    <input name="email" type="text" class="form-control" id="recipient-name" required
+                      placeholder="Введите вашу почту">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Password:</label>
+                    <input name="password" type="text" class="form-control" id="recipient-name" required
+                      placeholder="Придумайте пароль">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" id="reg" class="btn btn-primary">register</button>
+                  </div>
+                </form>
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Mail:</label>
-            <input name="email" type="text" class="form-control" id="recipient-name" required placeholder="Введите вашу почту">
+        </div>
+        {{#unless userId}}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authorization"
+          data-bs-whatever="@mdo">authorization</button>
+        {{/unless}}
+        <div class="modal fade" id="authorization" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">authorization</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form name="formBloock">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Mail:</label>
+                    <input name="email" type="text" class="form-control" id="recipient-name" required
+                      placeholder="Введите вашу почту">
+                  </div>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Password:</label>
+                    <input name="password" type="text" class="form-control" id="recipient-name" required
+                      placeholder="Введите ваш пароль">
+                  </div>
+                  <button type="submit" class="btn btn-primary">logIn</button>
+                </form>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Password:</label>
-            <input name="password" type="text" class="form-control" id="recipient-name" required placeholder="Придумайте пароль">
-          </div>
-      <div class="modal-footer">
-        <button type="submit" id="reg" class="btn btn-primary">register</button>
-      </div>
-        </form>
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authorization"
-  data-bs-whatever="@mdo">authorization</button>
-
-<div class="modal fade" id="authorization" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">authorization</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form name="formBloock">
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Mail:</label>
-            <input name="email" type="text" class="form-control" id="recipient-name" required placeholder="Введите вашу почту">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Password:</label>
-            <input name="password" type="text" class="form-control" id="recipient-name" required placeholder="Введите ваш пароль">
-          </div>
-        <button type="submit" class="btn btn-primary">logIn</button>
-        </form>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+        </div>
+        {{#if userId}}
+        <li class="nav-item">
+          <a class="nav-link" href="/authorization/signout">Выход</a>
+        </li>
+        {{/if}}
+        {{#if userId}}
+        <li class="nav-item">
+          <a class="nav-link" href="#">Избранное</a>
+        </li>
+        {{/if}}
         <li class="nav-item">
           <a class="nav-link" href="#">Корзина</a>
         </li>
