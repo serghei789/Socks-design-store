@@ -3,7 +3,7 @@ del.addEventListener('click', async (e) => {
   e.preventDefault();
   const delId = e.target.id;
   if (e.target.classList.contains('delete')) {
-    const delNo = await fetch(`/socks/delete/${delId}`, {
+    const delNo = await fetch(`/favourites/delete/${delId}`, {
       method: 'DELETE',
     });
     if (delNo.status === 200) {
@@ -15,5 +15,3 @@ del.addEventListener('click', async (e) => {
     }
   }
 });
-
-// NOT READY

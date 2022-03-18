@@ -5,20 +5,25 @@
     <form id="favorite-form">
       <div id="Vraper">
         <div class="wrapperWorker" data-id="{{userId}}">
-          {{!-- {{#each result}} --}}
+          {{#each favourites}}
   <div class="screen">
-        <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
-        <div id="img-layer" class="layer"><img src="{{picture}}" alt="Изображение для носка"></div>
-        <div id="pattern-layer" class="layer"><img src="{{ornament}}" alt="Узор для носка"></div>
+        <div id="color-layer" class="layer" style="background-color:{{this.id}}"></div>
+        {{!-- <div id="img-layer" class="layer"><img src="{{picture}}" alt="Изображение для носка"></div>
+        <div id="pattern-layer" class="layer"><img src="{{ornament}}" alt="Узор для носка"></div> --}}
          <div id="upper-layer" class="layer"><img src="/img/socksMaket.jpg" alt="Шаблон носка"></div>
+  <div class="share-buttons">
+  </div>
       </div>
             <button class="entry-link" id="delete"><a href="" class="delete" id="{{socksId}}">Удалить</a></button>
           </div>
-          {{!-- {{/each}} --}}
+          {{/each}}
         </div>
       </div>
     </form>
-  </div>
+    <script src="https://yastatic.net/share2/share.js"></script>
+      </div>
 </div>
+<br>
+<div class="ya-share2" data-curtain data-shape="round" data-services="messenger,vkontakte,facebook,odnoklassniki"></div>
 <script src="/js/deletefavourites.js"></script>
 </center>
