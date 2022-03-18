@@ -1,4 +1,5 @@
 const card = document.querySelector('.cart1');
+// const butt = document.querySelector('.button');
 
 card.addEventListener('click', async (e) => {
   e.preventDefault();
@@ -18,3 +19,5 @@ card.addEventListener('click', async (e) => {
     // body: JSON.stringify({ scoreIn, scoreDe })
   })
 });
+
+// butt.addEventListener('click', )

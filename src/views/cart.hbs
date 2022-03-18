@@ -6,7 +6,7 @@
       <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
       <div id="img-layer" class="layer"><img src="{{picture}}" alt="Изображение для носка"></div>
       <div id="pattern-layer" class="layer"><img src="{{ornament}}" alt="Узор для носка"></div>
-      <div id="upper-layer" class="layer"><img src="/img/logo.jpg" alt="Шаблон носка"></div>
+      <div id="upper-layer" class="layer"><img src="/img/socksMaket.png" alt="Шаблон носка"></div>
     </div>
   </div>
   <div class="cart1">
@@ -22,7 +22,32 @@
     <p></p>
 
   </div>
-  <div>
-    <button class="ordering">Оформить заказ</button>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="#">
+        <div class="row">
+          <div class="col-50">
+            <h3>Платежный адрес</h3>
+            <label for="fname"><i class="fa fa-user"></i> Полное имя</label>
+            <input type="text" id="fname" name="firstname" placeholder="Иван Петрович Иванов">
+            <label for="email"><i class="fa fa-envelope"></i> Электронный адрес</label>
+            <input type="text" id="email" name="email" placeholder="ivan@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Адрес</label>
+            <input type="text" id="adr" name="address" placeholder="ул.Проездная, д. 54">
+            <label for="city"><i class="fa fa-institution"></i> Телефон</label>
+            <input type="text" id="city" name="city" placeholder="+7 (999) 999 99 99">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="button">
+    <div>
+      <input value="Оформить заказ" onclick="alert('Спасибо за заказ! С вами свяжется менеджер.')" type="button">
+    </div>
   </div>
 </center>
+<script defer src="js/counter.js"></script>
