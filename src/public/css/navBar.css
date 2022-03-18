@@ -25,6 +25,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
 }
 #sockContainer{
   display: flex;
@@ -42,4 +43,11 @@ footer {
 .sockImg{
   width: 200px;
   height: 240px;
+}
+/* .container-fluid {
+  background-color: rgb(52, 1, 154);
+} */
+.generatorlink {
+  display: flex;
+  justify-content: center;
 }
