@@ -14,4 +14,19 @@
   flex-wrap: nowrap;
   margin-top: 35px;
 }
-
+#pictureOnSock1{
+  width: 75px;
+    height: 85px;
+    position: absolute;
+    top: 265px;
+    left: 290px;
+    background-size: cover;
+}
+#pictureOnSock2{
+  width: 75px;
+    height: 85px;
+    position: absolute;
+    top: 335px;
+    left: 140px;
+    background-size: contain;
+}
