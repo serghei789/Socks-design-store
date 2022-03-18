@@ -20,4 +20,5 @@ router.post('/picture', async (req, res) => {
   const pictureSrc = await Picture.findOne({ where: { id } });
   res.json({ src: pictureSrc.src });
 });
+
 module.exports = router;
