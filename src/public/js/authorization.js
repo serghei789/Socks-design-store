@@ -10,11 +10,12 @@ formBloock.addEventListener('submit', async (e) => {
     body: JSON.stringify(autData),
   })
   console.log(response);
-  const data = await response.json();
+  const resJson = await response.json();
+  console.log(response.status);
   if (response.status === 200) {
-    window.location = '/'
+    window.location = '/';
   } else {
-    const data = await response.json()
+    const data = await response.json();
     alert(data.message);
   }
 })

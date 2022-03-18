@@ -1,8 +1,11 @@
 const express = require('express');
-const index = express.Router()
+
+const index = express.Router();
 
 index.get('/', (req, res) => {
-  res.render('home')
-})
+  const name = req.session.userName || 'юзер';
+  console.log(req.session.userName);
+  res.render('home', { name });
+});
 
 module.exports = index;
