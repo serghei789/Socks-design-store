@@ -7,7 +7,8 @@ const btnFav = document.querySelector('#btnFav');
 const pictureOnSock1 = document.querySelector('#pictureOnSock1');
 const pictureOnSock2 = document.querySelector('#pictureOnSock2');
 
-colorSelector.addEventListener('click', async (e) => {
+
+colorSelector.addEventListener('change', async (e) => {
   const id = e.target.value;
   if (id === 'цвет') return;
   const resp = await fetch('/generator', {
@@ -21,9 +22,8 @@ colorSelector.addEventListener('click', async (e) => {
   socksDiv.style.backgroundColor = code.code;
 });
 
-pictureSelector.addEventListener('click', async (e) => {
+pictureSelector.addEventListener('change', async (e) => {
   const id = e.target.value;
-  console.log(id);
   if (id === 'картинка') return;
   const resp = await fetch('/generator/picture', {
     method: 'POST',
@@ -37,11 +37,28 @@ pictureSelector.addEventListener('click', async (e) => {
   pictureOnSock2.style.backgroundImage = `url('${src.src}')`;
 });
 
+ornamentSelector.addEventListener('change', async (e) => {
+  const id = e.target.value;
+  if (id === 'узор') return;
+  const resp = await fetch('/generator/ornament', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ id }),
+  });
+  const src = await resp.json();
+  ornamentOnSock2.style.backgroundImage = `url('${src.src}')`;
+  ornamentOnSock1.style.backgroundImage = `url('${src.src}')`;
+
+  //два дива куда вставим узор
+});
+
 btnCart.addEventListener('click', (e) => {
-  console.log(4);
-  window.location.replace(`http://localhost:4000/cart/add?colorId=${colorSelector.value}&pictureId=${pictureSelector.value}&ornamentId=${ornamentSelector.value}&userId=${req.session.userId}`);
+  console.log('in butto ');
+  window.location.replace(`http://localhost:4000/cart/add?colorId=${colorSelector.value}&pictureId=${pictureSelector.value}&ornamentId=${ornamentSelector.value}`);
 });
 
 btnFav.addEventListener('click', (e) => {
-  window.location.replace(`http://localhost:4000/favourites/add?colorId=${colorSelector.value}&pictureId=${pictureSelector.value}&ornamentId=${ornamentSelector.value}&userId=${req.session.userId}`);
+  window.location.replace(`http://localhost:4000/favourites/add?colorId=${colorSelector.value}&pictureId=${pictureSelector.value}&ornamentId=${ornamentSelector.value}`);
 });
