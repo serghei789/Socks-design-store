@@ -11,7 +11,7 @@ card.addEventListener('click', async (e) => {
     const scoreDe = e.target.closest('.wrap').querySelector('.counter');
     scoreDe.innerHTML = Number(scoreDe.innerHTML) - 1;
   }
-  const res = await fetch('/product/box', {
+  const res = await fetch('/cart/box', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
