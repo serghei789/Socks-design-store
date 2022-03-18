@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Color, Ornament, Picture } = require('../../db/models');
 
-let colors = [];
 router.get('/', async (req, res) => {
   colors = await Color.findAll();
   ornaments = await Ornament.findAll();

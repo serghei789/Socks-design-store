@@ -24,10 +24,11 @@ const colors = [{
 console.log(colorSelector);
 colorSelector.addEventListener('click', async (e) => {
   console.log(colorSelector.value);
+  console.log(socksDiv);
   console.log(socksDiv.style.backgroundColor);
   for (const color of colors) {
-    if (color.id === colorSelector.value) {
-      socksDiv.style.backgroundColor = 'red';
+    if (color.id === Number(colorSelector.value)) {
+      socksDiv.style.backgroundColor = color.code;
     }
   }
   // socksDiv.style.backgroundColor = 'rgb(200, 226, 234)';
