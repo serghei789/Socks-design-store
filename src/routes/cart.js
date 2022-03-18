@@ -1,16 +1,17 @@
 const express = require('express');
+
 const router = express.Router();
 
 const { Color, Ornament, Picture, Favourite, Sockstype, Order} = require('../../db/models');
 // /cart
-router.get('/', (req, res)=>{
-  res.render('cart')
+router.get('/', (req, res) => {
+  res.render('cart');
 });
 
 router.put('/box', async (req, res) => {
   try {
     const { count } = req.body;
-    await Cart.update({ count: count + 1 });
+    await Order.update({ count: count + 1 });
   } catch (err) {
     console.log(err);
     res.status(500);

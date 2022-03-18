@@ -1,29 +1,28 @@
 <center>
-<h2>Корзина</h2>
-<div class="cart">
-  
-      <div class="screen">
-        <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
-        <div id="img-layer" class="layer"><img src="{{picture}}" alt="Изображение для носка"></div>
-        <div id="pattern-layer" class="layer"><img src="{{ornament}}" alt="Узор для носка"></div>
-         <div id="upper-layer" class="layer"><img src="/img/logo.jpg" alt="Шаблон носка"></div>
+  <h2>Корзина</h2>
+  <div class="cart">
+    {{#each orders}}
+    <div class="screen">
+      <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
+      <div id="img-layer" class="layer"><img src="{{picture}}" alt="Изображение для носка"></div>
+      <div id="pattern-layer" class="layer"><img src="{{ornament}}" alt="Узор для носка"></div>
+      <div id="upper-layer" class="layer"><img src="/img/logo.jpg" alt="Шаблон носка"></div>
+    </div>
+  </div>
+  <div class="cart1">
+    <div class="wrap">
+      <p class="counter"></p>
+      <div>
+        <button class="decrement">-</button>
+        <input type="number">
+        <button class="increment">+</button>
       </div>
-  
-</div>
-<div class="cart1">
-  
-        <div class="wrap">
-            <p class="counter"></p>
-            <div>
-                <button class="decrement">-</button>
-                <input type="number">
-                <button class="increment">+</button>
-            </div>
-        </div>
-        <p></p>
-    
-</div>
- <div>
+    </div>
+    {{/each}}
+    <p></p>
+
+  </div>
+  <div>
     <button class="ordering">Оформить заказ</button>
   </div>
 </center>
