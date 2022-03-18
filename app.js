@@ -13,7 +13,7 @@ dotenv.config();
 // const mainRouter = require('./src/routes/main');
 // const registrationRouter = require('./src/routes/registration');
 // const authorizationRouter = require('./src/routes/authorization');
-// const generatorRouter = require('./src/routes/generator');
+const generatorRouter = require('./src/routes/generator');
 const cartRouter = require('./src/routes/cart');
 const favouritesRouter = require('./src/routes/favourites');
 
@@ -48,7 +48,7 @@ app.use(addToLocals);
 // app.use('/', mainRouter);
 // app.use('/registration', registrationRouter);
 // app.use('/authorization', authorizationRouter);
-// app.use('/generator', generatorRouter);
+app.use('/generator', generatorRouter);
 app.use('/favourites', favouritesRouter);
 app.use('/cart', cartRouter);
 app.use('/registration', registrationRout);
