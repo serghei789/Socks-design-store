@@ -15,5 +15,3 @@ del.addEventListener('click', async (e) => {
     }
   }
 });
-
-// NOT READY
