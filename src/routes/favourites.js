@@ -6,11 +6,12 @@ const {
 const router = express.Router();
 
 // /favourites
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const favourites = await Favourite.findAll({ where: { userId: req.session.userId } });
   res.render('favourites');
 });
 
-router.get('/favourites', async (req, res) => {
+/* router.get('/favourites', async (req, res) => {
   const designsFavUser = await Favourite.findAll({ where: { userId: req.session.userId }, raw: true });
   const designArr = await Promise.all(designsFavUser.map(async (favourite) => {
     const resDes = await Sockstype.findOne({ where: { id: favourite.socksId }, raw: true });
@@ -26,6 +27,17 @@ router.get('/favourites', async (req, res) => {
   }));
   const getFavourite = await Favourite.findAll({ where: { userId: req.session.userId } });
   res.render('favourites', { getFavourite, result });
+}); */
+
+router.get('/add', async (req, res) => {
+  const {
+    colorId, pictureId, ornamentId, userId,
+  } = req.query;
+
+  const newSockstype = await Sockstype.create({ colorId, pictureId, ornamentId });
+  const newFav = await Favourite.create({ socksId: newSockstype.id, userId });
+  const favourites = await Favourite.findAll({ where: { userId } });
+  res.redirect('/favourites');
 });
 
 router.delete('/delete/:id', async (req, res) => {
