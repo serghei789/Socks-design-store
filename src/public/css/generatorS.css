@@ -16,23 +16,42 @@
 }
 #pictureOnSock1{
   width: 75px;
-    height: 85px;
-    position: absolute;
-    top: 265px;
-    left: 382px;
-    background-size: cover;
+  height: 85px;
+  position: absolute;
+  top: 265px;
+  left: 408px;
+  background-size: cover;
 }
 #pictureOnSock2{
   width: 75px;
-    height: 85px;
-    position: absolute;
-    top: 335px;
-    left: 230px;
-    background-size: contain;
+  height: 85px;
+  position: absolute;
+  top: 335px;
+  left: 254px;
+  background-size: cover;
 }
 .addBtn{
 margin-top: 10px;
 }
 #mr{
   margin-right: 10px;
+}
+#ornamentOnSock1 {
+  width: 77px;
+  height: 99px;
+  position: absolute;
+  top: 520px;
+  left: 305px;
+  background-size: contain;
+  transform: rotate(45deg);
+}
+
+#ornamentOnSock2 {
+  width: 77px;
+  height: 99px;
+  position: absolute;
+  top: 454px;
+  left: 456px;
+  background-size: contain;
+  transform: rotate(45deg);
 }

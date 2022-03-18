@@ -21,4 +21,10 @@ router.post('/picture', async (req, res) => {
   res.json({ src: pictureSrc.src });
 });
 
+router.post('/ornament', async (req, res) => {
+  const { id } = req.body;
+  const ornamentSrc = await Ornament.findOne({ where: { id } });
+  res.json({ src: ornamentSrc.src });
+});
+
 module.exports = router;
