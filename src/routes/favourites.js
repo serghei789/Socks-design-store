@@ -1,11 +1,11 @@
 const express = require('express');
-
-const router = express.Router();
-
 const {
   Favourite, Sockstype, Color, Ornament, Picture,
 } = require('../../db/models');
 
+const router = express.Router();
+
+// /favourites
 router.get('/', (req, res) => {
   res.render('favourites');
 });
